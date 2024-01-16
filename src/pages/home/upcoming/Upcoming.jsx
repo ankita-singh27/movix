@@ -6,16 +6,15 @@ import SwitchTabs from "../../../components/switchTabs/SwitchTabs";
 
 import useFetch from "../../../hooks/useFetch";
 
-const Trending = () => {
-    const [endpoint, setEndpoint] = useState("day");
+const Upcoming = () => {
+    const [endpoint, setEndpoint] = useState("movie");
     const [ending, setEnding] = useState("now_playing");
 
-    const { data, loading } = useFetch(`/trending/movie/${endpoint}`);
+    const { data, loading } = useFetch(`/${endpoint}/${ending}`);
 
     const onTabChange = (tab) => {
-        setEndpoint(tab === "Day" ? "day" : "week");
+        setEndpoint(tab === "Movies" ? "movie" : "tv");
     };
-
     const onMediaChange = (tab) => {
         setEnding(tab === "Movies" ? "now_playing" : "airing_today");
     };
@@ -23,12 +22,20 @@ const Trending = () => {
     return (
         <div className="carouselSection">
             <ContentWrapper>
-                <span className="carouselTitle">Trending</span>
-                <SwitchTabs data={["Day", "Week"]} onTabChange={onTabChange} onMediaChange={onMediaChange} />
+                <span className="carouselTitle">Now Playing</span>
+                <SwitchTabs
+                    data={["Movies", "TV Shows"]}
+                    onTabChange={onTabChange}
+                    onMediaChange ={onMediaChange}
+                />
             </ContentWrapper>
-            <Carousel data={data?.results} loading={loading} />
+            <Carousel
+                data={data?.results}
+                loading={loading}
+                endpoint={endpoint}
+            />
         </div>
     );
 };
 
-export default Trending;
+export default Upcoming;

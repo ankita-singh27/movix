@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import "./style.scss";
 
-const SwitchTabs = ({ data, onTabChange }) => {
+const SwitchTabs = ({ data, onTabChange,onMediaChange}) => {
     const [selectedTab, setSelectedTab] = useState(0);
     const [left, setLeft] = useState(0);
 
@@ -12,6 +12,7 @@ const SwitchTabs = ({ data, onTabChange }) => {
             setSelectedTab(index);
         }, 300);
         onTabChange(tab, index);
+        onMediaChange(tab);
     };
 
     return (
