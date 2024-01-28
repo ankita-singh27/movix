@@ -8,8 +8,8 @@ import { getApiConfiguration, getGenres } from "./store/homeSlice";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import Home from "./pages/home/Home";
- import Explore from "./pages/explore/Explore";
-
+import Explore from "./pages/explore/Explore";
+import Details from "./pages/details/Details";
 
 function App() {
     const dispatch = useDispatch();
@@ -55,6 +55,7 @@ function App() {
             <Header />
             <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/:mediaType/:id" element={<Details />} />
                 <Route path="/explore/:mediaType" element={<Explore />} />
             </Routes>
             <Footer />
