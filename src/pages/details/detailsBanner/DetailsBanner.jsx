@@ -11,6 +11,8 @@ import Genres from "../../../components/genres/Genres";
 import CircleRating from "../../../components/circleRating/CircleRating";
 import Img from "../../../components/lazyLoadImage/Img.jsx";
 import PosterFallback from "../../../assets/no-poster.png";
+import VideoPopup from "../../../components/videoPopup/VideoPopup";
+
 import { PlayIcon } from "../Playbtn";
 
 const DetailsBanner = ({ video, crew }) => {
@@ -154,7 +156,13 @@ const DetailsBanner = ({ video, crew }) => {
                     )}
                   </div>
                 </div>
-               
+
+                <VideoPopup
+                  show={show}
+                  setShow={setShow}
+                  videoId={videoId}
+                  setVideoId={setVideoId}
+                />
               </ContentWrapper>
             </React.Fragment>
           )}
