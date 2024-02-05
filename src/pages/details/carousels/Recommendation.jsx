@@ -7,7 +7,6 @@ const Recommendation = ({ mediaType, id }) => {
     const { data, loading,} = useFetch(
         `/${mediaType}/${id}/recommendations`
     );
-    console.log(data);
 
     return (
         <>
