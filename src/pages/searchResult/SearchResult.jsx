@@ -86,6 +86,7 @@ const SearchResult = () => {
                            <h2> Sorry, Results not found!</h2>
                         <img src={noResults} alt="no result"/>
                         </div> 
+                       
                     )}
                 </ContentWrapper>
             )}
@@ -94,3 +95,4 @@ const SearchResult = () => {
 };
 
 export default SearchResult;
+ 

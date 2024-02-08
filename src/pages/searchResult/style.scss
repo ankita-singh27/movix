@@ -23,18 +23,19 @@
         }
     }
     .resultNotFound {
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        text-align: center;
+        margin-top:100px;
         h2{
-        font-size: 24px;
+        font-size: 27px;
         color: var(--black-light);
         }
         img{
-            height: 400px;
-            width:400px;
+            height: 200px;
+            width:200px;
+            @include md {
+                height: 300px;
+                width:300px;
+            }
         }
     }
 }
